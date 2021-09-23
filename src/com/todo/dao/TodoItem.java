@@ -37,4 +37,10 @@ public class TodoItem {
     public void setCurrent_date(Date current_date) {
         this.current_date = current_date;
     }
+
+	@Override
+	public String toString() {
+		return "TodoItem [title=" + title + ", desc=" + desc + ", current_date=" + current_date + "]";
+	}
+    
 }
