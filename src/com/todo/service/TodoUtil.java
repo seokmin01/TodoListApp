@@ -23,7 +23,7 @@ public class TodoUtil {
 				+ "[할 일 추가]\n"
 				+ "제목 > ");
 		
-		title = sc.next().trim();
+		title = sc.nextLine().trim();
 		if (list.isDuplicate(title)) {
 			System.out.printf("중복되는 제목입니다.");
 			return;
@@ -44,7 +44,7 @@ public class TodoUtil {
 				+ "[할 일 삭제]\n"
 				+ "삭제할 할 일의 제목 > ");
 		
-		String title = sc.next().trim();
+		String title = sc.nextLine().trim();
 		
 		for (TodoItem item : l.getList()) {
 			if (title.equals(item.getTitle())) {
@@ -63,7 +63,7 @@ public class TodoUtil {
 				+ "[할 일 수정]\n"
 				+ "수정할 할 일의 제목 > ");
 		
-		String title = sc.next().trim();
+		String title = sc.nextLine().trim();
 		if (!l.isDuplicate(title)) {
 			System.out.println("해당 제목은 존재하지 않습니다.");
 			return;
