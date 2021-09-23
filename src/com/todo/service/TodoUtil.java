@@ -116,7 +116,7 @@ public class TodoUtil {
 	public static void loadList(TodoList l, String fileName) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(fileName));
-
+			int count = 0;
 			String todoLine;
 			while((todoLine = br.readLine()) != null) {
 				StringTokenizer st = new StringTokenizer(todoLine, "##");
@@ -126,9 +126,10 @@ public class TodoUtil {
 
 				TodoItem t = new TodoItem(title, desc, date);
 				l.addItem(t);
+				count++;
 			}
 			br.close();
-			System.out.println("모든 할 일 목록을 불러왔습니다.");
+			System.out.println(count + "개의 항목을 읽었습니다.");
 		} catch (FileNotFoundException e) {
 			System.out.println(fileName + "라는 파일이 존재하지 않습니다.");
 		} catch (IOException e) {
