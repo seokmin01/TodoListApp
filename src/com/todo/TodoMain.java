@@ -17,6 +17,7 @@ public class TodoMain {
 		
 		Menu.displaymenu();
 		do {
+			Menu.prompt();
 			isList = false;
 			String choice = sc.next();
 			switch (choice) {
@@ -40,17 +41,20 @@ public class TodoMain {
 			case "ls_name_asc":
 				l.sortByName();
 				isList = true;
+				System.out.println("제목순으로 정렬하였습니다.");
 				break;
 
 			case "ls_name_desc":
 				l.sortByName();
 				l.reverseList();
 				isList = true;
+				System.out.println("제목역순으로 정렬하였습니다.");
 				break;
 				
 			case "ls_date":
 				l.sortByDate();
 				isList = true;
+				System.out.println("날짜순으로 정렬하였습니다.");
 				break;
 
 			case "exit":
