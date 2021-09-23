@@ -43,4 +43,5 @@ public class TodoItem {
 		return "TodoItem [title=" + title + ", desc=" + desc + ", current_date=" + current_date + "]";
 	}
     
+    
 }

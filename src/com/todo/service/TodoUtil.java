@@ -16,14 +16,14 @@ public class TodoUtil {
 				+ "[할 일 추가]\n"
 				+ "제목 > ");
 		
-		title = sc.next();
+		title = sc.next().trim();
 		if (list.isDuplicate(title)) {
 			System.out.printf("중복되는 제목입니다.");
 			return;
 		}
 		
 		System.out.print("내용 > ");
-		desc = sc.next();
+		desc = sc.nextLine().trim();
 		
 		TodoItem t = new TodoItem(title, desc);
 		list.addItem(t);
@@ -37,7 +37,7 @@ public class TodoUtil {
 				+ "[할 일 삭제]\n"
 				+ "삭제할 할 일의 제목 > ");
 		
-		String title = sc.next();
+		String title = sc.next().trim();
 		
 		for (TodoItem item : l.getList()) {
 			if (title.equals(item.getTitle())) {
@@ -62,15 +62,15 @@ public class TodoUtil {
 			return;
 		}
 
-		System.out.println("새로운 할 일의 제목");
-		String new_title = sc.next().trim();
+		System.out.print("새로운 할 일의 제목 > ");
+		String new_title = sc.nextLine().trim();
 		if (l.isDuplicate(new_title)) {
 			System.out.println("중복되는 제목입니다.");
 			return;
 		}
 		
-		System.out.println("새로운 할 일의 내용");
-		String new_description = sc.next().trim();
+		System.out.print("새로운 할 일의 내용 > ");
+		String new_description = sc.nextLine().trim();
 		for (TodoItem item : l.getList()) {
 			if (item.getTitle().equals(title)) {
 				l.deleteItem(item);
@@ -83,8 +83,9 @@ public class TodoUtil {
 	}
 
 	public static void listAll(TodoList l) {
+		System.out.println("[할 일 목록]");
 		for (TodoItem item : l.getList()) {
-			System.out.println("Item Title: " + item.getTitle() + "  Item Description:  " + item.getDesc());
+			System.out.println("[" + item.getTitle() + "] " + item.getDesc() + " - " + item.getCurrent_date());
 		}
 	}
 }

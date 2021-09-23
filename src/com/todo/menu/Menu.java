@@ -13,7 +13,10 @@ public class Menu {
         System.out.println("6. ls_name_desc - 제목역순 정렬");
         System.out.println("7. ls_date - 날짜순 정렬");
         System.out.println("8. exit - 종료");
-        System.out.println();
-        System.out.print("명령어를 입력하세요. > ");
+    }
+    
+    public static void prompt()
+    {
+    	System.out.print("\n명령어를 입력하세요. > ");
     }
 }

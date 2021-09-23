@@ -56,6 +56,10 @@ public class TodoMain {
 			case "exit":
 				quit = true;
 				break;
+				
+			case "help":
+				Menu.displaymenu();
+				break;
 
 			default:
 				System.out.println("올바른 명령어를 입력해주세요. (help를 입력하면 명령어를 볼 수 있습니다.)");
