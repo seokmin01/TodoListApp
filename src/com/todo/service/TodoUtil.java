@@ -90,7 +90,7 @@ public class TodoUtil {
 	}
 
 	public static void listAll(TodoList l) {
-		System.out.println("[할 일 목록]");
+		System.out.println("[전체 목록]");
 		for (TodoItem item : l.getList()) {
 			System.out.println("[" + item.getTitle() + "] " + item.getDesc() + " - " + item.getCurrent_date());
 		}
