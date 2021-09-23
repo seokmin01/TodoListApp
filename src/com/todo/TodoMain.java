@@ -72,5 +72,6 @@ public class TodoMain {
 			
 			if(isList) l.listAll();
 		} while (!quit);
+		TodoUtil.saveList(l, "todolist.txt");
 	}
 }
