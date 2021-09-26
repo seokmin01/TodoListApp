@@ -65,6 +65,10 @@ public class TodoMain {
 				System.out.println("날짜역순으로 정렬하였습니다.");
 				break;
 				
+			case "ls_cate":
+				TodoUtil.ls_cate(l);
+				break;
+				
 			case "find":
 				String keyword = sc.nextLine().trim();
 				if (keyword.equals(""))

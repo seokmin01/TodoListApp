@@ -212,4 +212,23 @@ public class TodoUtil {
 			System.out.println("총 " + cnt + "개의 항목을 찾았습니다.");
 	}
 	
+	public static void ls_cate(TodoList l) {
+		int cnt = 0;
+		String str = "";
+		for (TodoItem item : l.getList()) {
+			
+			if (cnt == 0) {
+				str = item.getCategory();
+				cnt++;
+			}
+
+			if (!str.contains(item.getCategory())) {
+				str += " / " + item.getCategory();
+				cnt++;
+			}
+		}
+		System.out.println(str);
+		System.out.println("총 " + cnt + "개의 카테고리가 등록되어 있습니다.");
+	}
+	
 }
