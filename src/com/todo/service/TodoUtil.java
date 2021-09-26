@@ -90,7 +90,7 @@ public class TodoUtil {
 				sc.nextLine();
 				System.out.print("새로운 제목 > ");
 				String new_title = sc.nextLine().trim();
-				if (l.isDuplicate(new_title)) {
+				if (!item.getTitle().equals(new_title) && l.isDuplicate(new_title)) {
 					System.out.println("중복되는 제목입니다.");
 					return;
 				}
