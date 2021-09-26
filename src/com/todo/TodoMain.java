@@ -57,6 +57,14 @@ public class TodoMain {
 				isList = true;
 				System.out.println("날짜순으로 정렬하였습니다.");
 				break;
+				
+			case "find":
+				String keyword = sc.nextLine().trim();
+				if (keyword.equals(""))
+					System.out.println("검색할 키워드를 같이 입력해주세요.");
+				else
+					TodoUtil.findItem(l, keyword);
+				break;
 
 			case "exit":
 				quit = true;
