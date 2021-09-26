@@ -192,4 +192,23 @@ public class TodoUtil {
 			System.out.println("총 " + cnt + "개의 항목을 찾았습니다.");
 	}
 	
+	public static void findCateItem(TodoList l, String keyword) {
+		
+		int i = 1, cnt = 0;
+		Scanner sc = new Scanner(System.in);
+		
+		for (TodoItem item : l.getList()) {
+			if (item.getCategory().contains(keyword)) {
+				System.out.println(i + ". " + item.toString());
+				cnt++;
+			}
+			i++;
+		}
+		
+		if (cnt == 0)
+			System.out.println("검색된 항목이 없습니다.");
+		else
+			System.out.println("총 " + cnt + "개의 항목을 찾았습니다.");
+	}
+	
 }

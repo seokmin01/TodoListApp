@@ -65,6 +65,14 @@ public class TodoMain {
 				else
 					TodoUtil.findItem(l, keyword);
 				break;
+				
+			case "find_cate":
+				String keyword_cate = sc.nextLine().trim();
+				if (keyword_cate.equals(""))
+					System.out.println("검색할 키워드를 같이 입력해주세요.");
+				else
+					TodoUtil.findCateItem(l, keyword_cate);
+				break;
 
 			case "exit":
 				quit = true;
