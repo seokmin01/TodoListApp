@@ -155,8 +155,8 @@ public class TodoUtil {
 			String todoLine;
 			while((todoLine = br.readLine()) != null) {
 				StringTokenizer st = new StringTokenizer(todoLine, "##");
-				String title = st.nextToken();
 				String category = st.nextToken();
+				String title = st.nextToken();
 				String desc = st.nextToken();
 				String due_date = st.nextToken();
 				String current_date = st.nextToken();
