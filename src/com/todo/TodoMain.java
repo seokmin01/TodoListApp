@@ -58,6 +58,13 @@ public class TodoMain {
 				System.out.println("날짜순으로 정렬하였습니다.");
 				break;
 				
+			case "ls_date_desc":
+				l.sortByDate();
+				l.reverseList();
+				isList = true;
+				System.out.println("날짜역순으로 정렬하였습니다.");
+				break;
+				
 			case "find":
 				String keyword = sc.nextLine().trim();
 				if (keyword.equals(""))

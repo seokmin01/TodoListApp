@@ -36,9 +36,18 @@ public class TodoList {
 	}
 
 	public void listAll() {
-		System.out.println("[전체 목록]");
+		int count = 0;
+		int i = 1;
+		
 		for (TodoItem myitem : list) {
-			System.out.println("[" + myitem.getTitle() + "] " + myitem.getDesc() + " - " + myitem.getCurrent_date());
+			count++;
+		}
+		
+		System.out.println("[전체 목록, 총 " + count + "개]");
+		
+		for (TodoItem myitem : list) {
+			System.out.println(i + ". " + myitem.toString());
+			i++;
 		}
 	}
 	

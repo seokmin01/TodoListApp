@@ -87,7 +87,7 @@ public class TodoUtil {
 		for (TodoItem item : l.getList()) {
 			if (i == n) {
 				System.out.println(i + ". " + item.toString());
-				
+				sc.nextLine();
 				System.out.print("새로운 제목 > ");
 				String new_title = sc.nextLine().trim();
 				if (l.isDuplicate(new_title)) {
@@ -122,6 +122,7 @@ public class TodoUtil {
 		for (TodoItem item : l.getList()) {
 			count++;
 		}
+		
 		System.out.println("[전체 목록, 총 " + count + "개]");
 		
 		for (TodoItem item : l.getList()) {
