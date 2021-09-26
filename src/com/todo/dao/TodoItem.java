@@ -5,22 +5,28 @@ import java.text.SimpleDateFormat;
 
 public class TodoItem {
     private String title;
+    private String category;
     private String desc;
+    private String due_date;
     private String current_date;
 
 
-    public TodoItem(String title, String desc) {
+    public TodoItem(String title, String category, String desc, String due_date) {
     	SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     	
         this.title=title;
+        this.category=category;
         this.desc=desc;
+        this.due_date=due_date;
         this.current_date=sdf.format(new Date());
     }
     
-    public TodoItem(String title, String desc, String date) {
+    public TodoItem(String title, String category, String desc, String due_date, String current_date) {
     	this.title=title;
+    	this.category=category;
         this.desc=desc;
-        this.current_date=date;
+        this.due_date=due_date;
+        this.current_date=current_date;
     }
     
     public String getTitle() {
@@ -47,12 +53,28 @@ public class TodoItem {
         this.current_date = current_date;
     }
 
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getDue_date() {
+		return due_date;
+	}
+
+	public void setDue_date(String due_date) {
+		this.due_date = due_date;
+	}
+
 	@Override
 	public String toString() {
-		return "TodoItem [title=" + title + ", desc=" + desc + ", current_date=" + current_date + "]";
+		return "[" + category + "] " + title + " - " + desc + " - " + due_date + " - " + current_date;
 	}
     
 	public String toSaveString() {
-		return title + "##" + desc + "##" + current_date + "\n";
+		return category + "##" + title + "##" + desc + "##" + due_date + "##" + current_date + "\n";
 	}
 }
